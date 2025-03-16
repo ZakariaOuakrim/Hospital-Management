@@ -21,10 +21,20 @@ public class HospitalManagementApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        patientRepository.save(new Patient( null,"Zakaria", new Date(), true, 10));
-        patientRepository.save(new Patient( null,"Hassan", new Date(), false, 20));
-        patientRepository.save(new Patient( null,"Ali", new Date(), true, 30));
+        //patientRepository.save(new Patient( null,"Zakaria", new Date(), true, 10));
+        //patientRepository.save(new Patient( null,"Hassan", new Date(), false, 20));
+        //patientRepository.save(new Patient( null,"Ali", new Date(), true, 30));
         List<Patient> patients = patientRepository.findAll();
         patients.forEach(p -> System.out.println(p.toString()));
+        System.out.println("----------------------");
+        List<Patient> patientsWithAInThereName= patientRepository.findByNameContains("z");
+        patientsWithAInThereName.forEach(p -> System.out.println(p.toString()));
+        System.out.println("**********************");
+        List<Patient> patientsWithAInThereName2= patientRepository.search("%z%");
+        patientsWithAInThereName2.forEach(p -> System.out.println(p.toString()));
+        System.out.println("######################");
+        List<Patient> patientsWithAInThereName3= patientRepository.findByScoreGreaterThan(10);
+        patientsWithAInThereName3.forEach(p -> System.out.println(p.toString()));
+
     }
 }
