@@ -25,7 +25,9 @@
 </p>
 
 <i>This project is based on this UML diagram: </i> <br>
+
 <img src="https://raw.githubusercontent.com/ZakariaOuakrim/Hospital-Management/master/src/main/resources/images/4.png" />
+
 # Introduction
 This <b>Hospital Management Backend</b> project is built using Spring Boot. It allows hospitals to manage:
 
