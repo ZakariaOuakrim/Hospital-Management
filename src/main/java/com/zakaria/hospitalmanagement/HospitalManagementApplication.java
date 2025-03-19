@@ -4,6 +4,7 @@ import com.zakaria.hospitalmanagement.entities.Doctor;
 import com.zakaria.hospitalmanagement.entities.Patient;
 import com.zakaria.hospitalmanagement.repositories.DoctorRepository;
 import com.zakaria.hospitalmanagement.repositories.PatientRepository;
+import com.zakaria.hospitalmanagement.service.IHospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -44,7 +45,7 @@ public class HospitalManagementApplication  {
 
     }*/
     @Bean
-    CommandLineRunner start(PatientRepository patientRepository, DoctorRepository doctorRepository) {
+    CommandLineRunner start(IHospitalService hospitalService) {
         return args -> {
             Stream.of("Zakaria", "Hassan", "Ali").forEach(name -> {
                 Patient patient = new Patient();
@@ -52,13 +53,13 @@ public class HospitalManagementApplication  {
                 patient.setBirthDate(new Date());
                 patient.setSick(false);
                 patient.setScore((int) (Math.random() * 100));
-                patientRepository.save(patient);
+                hospitalService.savePatient(patient);
             });
             Stream.of("Mohammed","Younes","Omar").forEach(name -> {
                 Doctor doctor = new Doctor();
                 doctor.setName(name);
                 doctor.setSpeciality(Math.random()>0.5?"Dentist":"Ophtalmologist");
-                doctorRepository.save(doctor);
+                hospitalService.saveDoctor(doctor);
             });
         };
     }
