@@ -24,6 +24,8 @@
 <a href="#issue">Issue?</a>
 </p>
 
+<i>This project is based on this UML diagram: </i> <br>
+<img src="https://raw.githubusercontent.com/ZakariaOuakrim/Hospital-Management/master/src/main/resources/images/4.png" />
 # Introduction
 This <b>Hospital Management Backend</b> project is built using Spring Boot. It allows hospitals to manage:
 
@@ -34,7 +36,7 @@ This <b>Hospital Management Backend</b> project is built using Spring Boot. It a
 
 The project follows a RESTful API architecture with proper relationships between entities such as One-to-Many, Many-to-One, and One-to-One using JPA.
 
-## Installation
+# Installation
 ##### Copy the repository to your local machine
 ```
 https://github.com/ZakariaOuakrim/Hospital-Management.git
@@ -51,7 +53,7 @@ mvn spring-boot:run
 ```
 
 
-## Features
+# Features
 - Manage Patients: Add, update, delete, and list patients.
 
 - Manage Doctors: Add and assign doctors to appointments.
@@ -63,7 +65,7 @@ mvn spring-boot:run
 - Database Integration: Uses JPA with MySQL for persistence.
 
 
-## Database Schema
+# Database Schema
 
 The system follows the following entity relationships:
 
