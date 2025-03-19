@@ -16,6 +16,6 @@ public class Consultation {
     private Long id;
     private Date dateConsultation;
     private Date rapportConsultation;
-    @OneToOne(mappedBy = "consultation")
+    @OneToOne
     private Appointment appointment;
 }

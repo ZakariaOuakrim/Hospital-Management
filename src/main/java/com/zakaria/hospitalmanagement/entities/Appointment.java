@@ -14,10 +14,10 @@ public class Appointment {
     private Long id;
     private Date appointmentDate;
     private StatusRDV status;
-    @ManyToOne()
+    @ManyToOne
     private Patient patient;
-    @ManyToOne()
+    @ManyToOne
     private Doctor doctor;
-    @OneToOne
+    @OneToOne(mappedBy = "appointment")
     private Consultation consultation;
 }
