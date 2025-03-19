@@ -1,12 +1,11 @@
 package com.zakaria.hospitalmanagement.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Collection;
 
 @Entity
 @AllArgsConstructor
@@ -18,4 +17,6 @@ public class Doctor {
     private String name;
     private String speciality;
     private String email;
+    @OneToMany(mappedBy = "doctor",fetch = FetchType.LAZY)
+    private Collection<Appointment> appointments;
 }

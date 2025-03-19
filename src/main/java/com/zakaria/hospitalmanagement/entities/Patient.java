@@ -22,5 +22,4 @@ public class Patient {
     private boolean sick;
     private int score;
 
-
 }

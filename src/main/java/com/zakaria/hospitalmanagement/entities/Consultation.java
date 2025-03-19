@@ -6,18 +6,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+
 @Entity
-@Data @AllArgsConstructor
+@Data
+@AllArgsConstructor
 @NoArgsConstructor
-public class Appointment {
+public class Consultation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date appointmentDate;
-    private StatusRDV status;
-    @ManyToOne()
-    private Patient patient;
-    @ManyToOne()
-    private Doctor doctor;
-    @OneToOne
-    private Consultation consultation;
+    private Date dateConsultation;
+    private Date rapportConsultation;
+    @OneToOne(mappedBy = "consultation")
+    private Appointment appointment;
 }
