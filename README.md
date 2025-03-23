@@ -24,6 +24,8 @@
 <a href="#issue">Issue?</a>
 </p>
 
+<i> This project is part of a group of projects related to JEE and Middleware at ENSET Mohammedia.</i>
+
 <i>This project is based on this UML diagram: </i> <br>
 
 <img src="https://raw.githubusercontent.com/ZakariaOuakrim/Hospital-Management/master/src/main/resources/images/4.png" />
